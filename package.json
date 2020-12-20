@@ -1,0 +1,26 @@
+{
+  "name": "music-library-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "nodemon -r dotenv/config index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scott-hannabuss/music-library-api.git"
+  },
+  "author": "Scott Hannabuss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scott-hannabuss/music-library-api/issues"
+  },
+  "homepage": "https://github.com/scott-hannabuss/music-library-api#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6",
+    "sequelize": "^6.3.5"
+  }
+}
