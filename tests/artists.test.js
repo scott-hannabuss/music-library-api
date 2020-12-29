@@ -86,5 +86,42 @@ describe('/artists', () => {
                     });
             });
         });
+        describe('PATCH /artists/:id', () => {
+            it('updates artist genre by id', (done) => {
+                const artist = artists[0];
+                request(app)
+                    .patch(`/artists/${artist.id}`)
+                    .send({ genre: 'Psychedelic Rock' })
+                    .then((res) => {
+                        expect(res.status).to.equal(200);
+                        Artist.findByPk(artist.id, { raw: true }).then((updatedArtist) => {
+                            expect(updatedArtist.genre).to.equal('Psychedelic Rock');
+                            done();
+                        });
+                    });
+            });
+            it('updates artist genre by id', (done) => {
+                const artist = artists[0];
+                request(app)
+                    .patch(`/artists/${artist.id}`)
+                    .send({ name: 'Tame-Impala' })
+                    .then((res) => {
+                        expect(res.status).to.equal(200);
+                        Artist.findByPk(artist.id, { raw: true }).then((updatedArtist) => {
+                            expect(updatedArtist.name).to.equal('Tame-Impala');
+                            done();
+                        });
+                    });
+            });
+            it('returns a 404 if the artist does not exist', (done) => {
+                request(app)
+                    .patch('/artists/!!!!')
+                    .then((res) => {
+                        expect(res.status).to.equal(404);
+                        expect(res.body.error).to.equal('the artist could not be found.');
+                        done();
+                    });
+            });
+        });
     });
 });

@@ -7,7 +7,9 @@ app.post('/artists', artistControllers.create);
 
 app.get('/artists', artistControllers.list);
 
-app.get('/artists/:artistID', artistControllers.getArtistById)
+app.get('/artists/:artistId', artistControllers.getArtistById)
+
+app.patch('/artists/:id', artistControllers.updateArtist)
 
 module.exports = app
 
