@@ -11,6 +11,8 @@ app.get('/artists/:artistId', artistControllers.getArtistById)
 
 app.patch('/artists/:id', artistControllers.updateArtist)
 
+app.delete('/artists/:id', artistControllers.deleteArtist)
+
 module.exports = app
 
 
