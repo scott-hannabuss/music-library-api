@@ -123,7 +123,7 @@ describe('/artists', () => {
                     });
             });
         });
-        describe('DELETE /artists/:artistId', () => {
+        describe('DELETE /artists/:id', () => {
             it('deletes artist record by id', (done) => {
                 const artist = artists[0];
                 request(app)
@@ -139,13 +139,12 @@ describe('/artists', () => {
             });
             it('returns a 404 if the artist does not exist', (done) => {
                 request(app)
-                    .delete('/artists/?')
+                    .delete('/artists/bla')
                     .then((res) => {
                         expect(res.status).to.equal(404);
-                        expect(res.body.error).to.equal('the artist could not be found.');
+                        expect(res.body.error).to.equal('artist not found');
                         done();
                     })
-                    .catch(error => done(error))
             });
         });
     });
