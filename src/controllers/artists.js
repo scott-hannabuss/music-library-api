@@ -34,7 +34,7 @@ exports.updateArtist = (req, res) => {
 
 exports.deleteArtist = (req, res) => {
     const { id } = req.params;
-    Artist.destroy({ where: { artistId: id } }).then(([rowsDeleted]) => {
+    Artist.destroy({ where: { id } }).then(([rowsDeleted]) => {
         if (!rowsDeleted) {
             res.status(404).json({ error: 'artist not found' });
         } else {
