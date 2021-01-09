@@ -139,8 +139,9 @@ describe('/artists', () => {
             });
             it('returns a 404 if the artist does not exist', (done) => {
                 request(app)
-                    .delete('/artists/bla')
+                    .delete('/artists/4000')
                     .then((res) => {
+                        console.log(res.body)
                         expect(res.status).to.equal(404);
                         expect(res.body.error).to.equal('artist not found');
                         done();
