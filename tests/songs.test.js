@@ -58,12 +58,6 @@ describe("with songs in the database", () => {
         Promise.all(
             Promise.all([
                 Song.create({
-                    name: "It Is Not Meant to Be",
-                    year: album.year,
-                    artistId: artist.id,
-                    albumId: album.id,
-                }),
-                Song.create({
                     name: "Desire Be Desire Go",
                     year: album.year,
                     artistId: artist.id,
@@ -71,6 +65,12 @@ describe("with songs in the database", () => {
                 }),
                 Song.create({
                     name: "Alter Ego",
+                    year: album.year,
+                    artistId: artist.id,
+                    albumId: album.id,
+                }),
+                Song.create({
+                    name: "Lucidity",
                     year: album.year,
                     artistId: artist.id,
                     albumId: album.id,
