@@ -35,17 +35,19 @@ beforeEach(async () => {
 });
 
 describe('POST /album/${album.id}/song', () => {
-    xit('creates a new song under an album', (done) => {
+    it.only('creates a new song under an album', (done) => {
         request(app)
-            .post(`/album/${Album.id}/song`)
+            .post(`/album/${album.id}/song`)
             .send({
                 artist: artist.id,
                 name: 'Solitude Is Bliss',
             })
             .then((res) => {
-                expect(res.status).to.equal(201);
+                expect(res.status).to.equal(201)
+                console.log(res.body)
                 expect(res.body.name).to.equal('Solitude Is Bliss');
                 expect(res.body.artistId).to.equal(artist.id);
+                expect(res.body.albumId).to.equal(album.id)
                 done();
             })
             .catch(error => done(error))

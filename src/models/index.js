@@ -19,6 +19,7 @@ const setupDatabase = () => {
 
     Album.belongsTo(Artist, { as: 'artist' });
     Song.belongsTo(Album, { as: 'album' })
+    Song.belongsTo(Artist, { as: 'artist' })
 
     connection.sync({ alter: true });
     return {

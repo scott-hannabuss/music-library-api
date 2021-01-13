@@ -5,9 +5,17 @@ exports.create = (req, res) => {
     const { albumId } = req.params;
     Song.create(req.body)
         .then(song => {
-            song.setAlbum(albumId)
+            console.log(1, song)
+            song.setAlbum(Number(albumId))
+            song.setArtist(req.body.artist)
+            console.log(2, song)
+            return song
         })
-        .then((song) => res.status(201).json(song))
+        .then((song) => {
+            console.log(3, song)
+            return res.status(201).json(song)
+        }
+        )
 };
 
 exports.list = (_, res) => {
