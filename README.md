@@ -4,7 +4,7 @@ A RESTful API which takes incoming HTTP requests and performs various CRUD opera
 
 A simple diagram outlining the various relationships and schema of the database can be seen below:
 
-<img src="./readmeimages/Schema.png" alt ="A screenshot of the project">
+<img src="./images/Schema.png" alt ="A screenshot of the project">
 
 The database has been deloyed on Heroku and can be accessed with various URL routes. Please feel free to try out the various routes through Heroku or Postman. All of the routes can be found in app.js however I have also linked to a couple below to give an idea of how the data is displayed.
 
