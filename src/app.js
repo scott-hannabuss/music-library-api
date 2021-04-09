@@ -5,6 +5,8 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
+// establishes what controllers will be used when certain URLs are entered by user
+
 app.post("/artists", artistControllers.create);
 
 app.get("/artists", artistControllers.list);
